@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Tomasz Kapcia" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przemierzanie grafów - Kapcia Tomasz, PAW3 2022/2023</title>
+
+    <style>
+      body {
+        padding: 0;
+      }
+      div {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <fieldset>
+      <legend>Ustawienia</legend>
+
+      <div>
+        <legend>Wybór grafu</legend>
+        <button class="btn-graph" data-url="data/graph1.json">Graf 1</button>
+        <!-- <button class="btn-graph" data-url="data/graph2.json">Graf 2</button> -->
+      </div>
+
+      <span id="settings" style="display: none">
+        <div>
+          <legend>Algorytm przemierzania grafów</legend>
+          <label>
+            <input type="radio" name="algorithm" value="bfs" checked />
+            BFS - Przemierzanie wszerz
+          </label>
+          <!-- <label>
+            <input type="radio" name="algorithm" value="dfs" disabled />
+            DFS - Przemierzanie wgłąb
+          </label> -->
+        </div>
+
+        <div>
+          <legend>Znajdź ścieżkę pomiędzy węzłami</legend>
+          <span>Start: <input type="number" id="startNode" value="1" /></span>
+          <span>Koniec: <input type="number" id="endNode" value="9" /></span>
+        </div>
+
+        <div>
+          <button id="simulate">Symuluj</button>
+        </div>
+      </span>
+    </fieldset>
+
+    <p id="alertBox"></p>
+    <div id="visualization" style="display: none"></div>
+
+    <script src="lib/d3.js"></script>
+    <script src="js/setup.js"></script>
+    <script src="js/traversal.js"></script>
+  </body>
+</html>
